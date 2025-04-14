@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "Simple Highlighter",
+    "version": "1.0",
+    "description": "Highlight selected text with a shortcut. Highlights clear on refresh.",
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_title": "Simple Highlighter"
+    },
+    "commands": {
+        "highlight-text": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+H"
+            },
+            "description": "Highlight selected text"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
