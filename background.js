@@ -15,8 +15,7 @@ function highlightSelection() {
     const range = selection.getRangeAt(0);
     const span = document.createElement("mark");
     span.style.backgroundColor = "yellow";
-    span.style.pointerEvents = "none";
-    span.style.userSelect = "none";
+    // Removed pointer-events and user-select
     span.appendChild(range.extractContents());
     range.insertNode(span);
 
@@ -30,11 +29,10 @@ function underlineSelection() {
     const range = selection.getRangeAt(0);
     const span = document.createElement("span");
     span.style.textDecoration = "underline";
-    span.style.textDecorationColor = "green";
-    span.style.pointerEvents = "none";
-    span.style.userSelect = "none";
+    span.style.textDecorationColor = "blue";
+    // Removed pointer-events and user-select restrictions
     span.appendChild(range.extractContents());
     range.insertNode(span);
 
     selection.removeAllRanges();
-}
+}  
